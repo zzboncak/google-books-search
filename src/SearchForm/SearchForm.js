@@ -20,17 +20,23 @@ class SearchForm extends React.Component {
         //do stuff
         console.log(obj);
         let books = obj.items.map(item => {
+            let bookPrice = '';
+            if (item.saleInfo.saleability === "NOT_FOR_SALE") {
+                bookPrice = "Not for sale"
+            } else {
+                bookPrice = `$${item.saleInfo.retailPrice.amount}`;
+            }
             return {
                 title: item.volumeInfo.title,
                 authors: item.volumeInfo.authors,
-                //price: item.saleInfo.retailPrice.amount,
+                price: bookPrice,
                 description: item.volumeInfo.description,
                 image: item.volumeInfo.imageLinks["smallThumbnail"]
             }
         });
         console.log(books);
         this.props.updateBooks(books);
-        return books;
+        //return books;
     }
 
     handleSubmit(e) {

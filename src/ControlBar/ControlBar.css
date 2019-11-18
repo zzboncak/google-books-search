@@ -5,3 +5,9 @@ label {
 select {
     min-width: 100px;
 }
+
+.control-bar-container {
+    background-color: gainsboro;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

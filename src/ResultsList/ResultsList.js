@@ -17,7 +17,7 @@ class ResultsList extends React.Component {
                 key={index}
                 image={book.image} 
                 title={book.title} 
-                author={book.author} 
+                authors={book.authors} 
                 price={book.price}
                 description={book.description} 
             />
