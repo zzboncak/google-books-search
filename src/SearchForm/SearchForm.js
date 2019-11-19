@@ -31,7 +31,10 @@ class SearchForm extends React.Component {
                 authors: item.volumeInfo.authors,
                 price: bookPrice,
                 description: item.volumeInfo.description,
-                image: item.volumeInfo.imageLinks["smallThumbnail"]
+                image: item.volumeInfo.imageLinks["smallThumbnail"],
+                epub: item.accessInfo.epub.isAvailable,
+                pdf: item.accessInfo.pdf.isAvailable,
+                publicDomain: item.accessInfo.publicDomain
             }
         });
         console.log(books);
